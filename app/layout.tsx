@@ -67,9 +67,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/images/hero.jpg',
-        width: 1600,
-        height: 1065,
-        alt: 'The Container — Shams Container Terminal, Jeddah, on the Red Sea',
+        width: 900,
+        height: 1200,
+        alt: 'Crowd under confetti and stage lights at The Container festival, Jeddah',
       },
     ],
   },

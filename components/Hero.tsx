@@ -50,7 +50,7 @@ export function Hero() {
             <div className="relative aspect-[3/4] overflow-hidden">
               <Image
                 src="/images/hero.jpg"
-                alt="The Container — Shams Container Terminal, Jeddah, on the Red Sea"
+                alt="Crowd under confetti and stage lights at The Container festival, Jeddah"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 40vw"

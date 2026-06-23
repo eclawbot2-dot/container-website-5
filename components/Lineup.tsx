@@ -2,7 +2,7 @@
 
 import { useLang } from './LanguageProvider';
 import { formatEventDate } from '@/lib/i18n';
-import { EVENTS } from '@/lib/config';
+import { EVENTS, TICKETS_KNOWN, TICKETS_URL } from '@/lib/config';
 import { Plate } from './Plate';
 
 export function Lineup() {
@@ -19,6 +19,21 @@ export function Lineup() {
             <p className="mt-3 max-w-2xl font-display text-lg italic text-ink-soft">
               {t.lineup.subtitle}
             </p>
+            {TICKETS_KNOWN && TICKETS_URL && (
+              <a
+                href={TICKETS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex min-h-[44px] w-fit items-center gap-2 bg-ink px-6 py-3 text-paper transition-colors hover:bg-terracotta-deep"
+              >
+                <span className="font-display text-base">
+                  {t.lineup.ticketsCta}
+                </span>
+                <span aria-hidden="true" className="rtl:rotate-180">
+                  →
+                </span>
+              </a>
+            )}
           </div>
         </div>
 

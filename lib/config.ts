@@ -16,11 +16,9 @@ export const INSTAGRAM_URL = INSTAGRAM_KNOWN && INSTAGRAM_HANDLE
   ? `https://instagram.com/${INSTAGRAM_HANDLE}`
   : '';
 
-// TODO real ticketing URL unknown — no verified ticket provider/page. Do NOT
-// link to Instagram or a guessed ticketer. Until confirmed, the Tickets CTA is
-// a visible, non-linking "Tickets — coming soon" placeholder.
-export const TICKETS_URL = '';
-export const TICKETS_KNOWN = false;
+// Webook Jeddah events — swap to specific event slug when on sale
+export const TICKETS_URL = 'https://webook.com/explore?city=JED&country=SA';
+export const TICKETS_KNOWN = true;
 
 // TODO real mailbox unknown — info@container.jahdev.com has no mailbox
 // provisioned, so a mailto: would bounce. Shown as a plain (non-mailto) label

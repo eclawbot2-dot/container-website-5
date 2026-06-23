@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --grain-opacity: 0.035;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: theme('colors.paper');
+  color: theme('colors.ink');
+}
+
+/* Language-driven font families.
+   Body element carries the active language family; display elements opt in. */
+html[lang='en'] body {
+  font-family: theme('fontFamily.body');
+}
+html[lang='ar'] body {
+  font-family: theme('fontFamily.ar-body');
+}
+html[lang='en'] .font-display {
+  font-family: theme('fontFamily.display');
+}
+html[lang='ar'] .font-display {
+  font-family: theme('fontFamily.ar-display');
+}
+
+/* Small-caps editorial label */
+.label {
+  font-family: theme('fontFamily.body');
+  text-transform: uppercase;
+  letter-spacing: theme('letterSpacing.smallcaps');
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+html[lang='ar'] .label {
+  font-family: theme('fontFamily.ar-body');
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.85rem;
+}
+
+/* Drop cap on first paragraph of about */
+.dropcap::first-letter {
+  font-family: theme('fontFamily.display');
+  font-size: 3.6em;
+  line-height: 0.78;
+  float: left;
+  padding-inline-end: 0.08em;
+  padding-top: 0.06em;
+  color: theme('colors.terracotta');
+  font-weight: 600;
+}
+html[dir='rtl'] .dropcap::first-letter {
+  float: right;
+}
+
+/* Fine paper grain texture overlay */
+.grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Framed gallery plate */
+.plate {
+  position: relative;
+  background: theme('colors.bone');
+  padding: 0.6rem;
+  box-shadow: 0 1px 0 theme('colors.rule');
+}
+.plate img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.18) contrast(1.02) brightness(0.98) sepia(0.06);
+}
+.plate figcaption {
+  font-family: theme('fontFamily.body');
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: theme('colors.ink-soft');
+  margin-top: 0.55rem;
+}
+html[lang='ar'] .plate figcaption {
+  font-family: theme('fontFamily.ar-body');
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.8rem;
+}
+
+.hairline {
+  height: 1px;
+  background: theme('colors.rule');
+}
+
+/* Fade-up reveal */
+@keyframes editorial-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise {
+  animation: editorial-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rise { animation: none; }
+}

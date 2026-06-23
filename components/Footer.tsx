@@ -1,7 +1,13 @@
 'use client';
 
 import { useLang } from './LanguageProvider';
-import { INSTAGRAM_URL, INSTAGRAM_HANDLE, CONTACT_EMAIL } from '@/lib/config';
+import {
+  INSTAGRAM_KNOWN,
+  INSTAGRAM_URL,
+  INSTAGRAM_HANDLE,
+  CONTACT_EMAIL,
+  CONTACT_EMAIL_KNOWN,
+} from '@/lib/config';
 
 export function Footer() {
   const { t } = useLang();
@@ -24,24 +30,39 @@ export function Footer() {
 
           <div className="sm:col-span-3">
             <p className="label text-bone/50">{t.footer.follow}</p>
-            <a
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-block font-display text-lg text-bone transition-colors hover:text-terracotta"
-            >
-              @{INSTAGRAM_HANDLE}
-            </a>
+            {INSTAGRAM_KNOWN && INSTAGRAM_URL ? (
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-block font-display text-lg text-bone transition-colors hover:text-terracotta"
+              >
+                @{INSTAGRAM_HANDLE}
+              </a>
+            ) : (
+              // No verified IG handle — non-linking placeholder, not a guess.
+              <span className="mt-3 inline-block font-display text-lg text-bone/60">
+                {t.links.igPlaceholder}
+              </span>
+            )}
           </div>
 
           <div className="sm:col-span-3">
             <p className="label text-bone/50">{t.footer.contact}</p>
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="mt-3 inline-block font-display text-lg text-bone transition-colors hover:text-terracotta"
-            >
-              {CONTACT_EMAIL}
-            </a>
+            {CONTACT_EMAIL_KNOWN ? (
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="mt-3 inline-block font-display text-lg text-bone transition-colors hover:text-terracotta"
+              >
+                {CONTACT_EMAIL}
+              </a>
+            ) : (
+              // No mailbox provisioned — show the address as a plain label, no
+              // mailto: (which would bounce).
+              <span className="mt-3 inline-block font-display text-lg text-bone/60">
+                {CONTACT_EMAIL}
+              </span>
+            )}
           </div>
         </div>
 

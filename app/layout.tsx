@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import { Fraunces, Inter, Amiri, Cairo } from 'next/font/google';
 import { SITE_URL, VENUE_NAME, VENUE_COORDS, EVENTS, INSTAGRAM_URL } from '@/lib/config';
+// INSTAGRAM_URL is '' until a real handle is verified; only emit it in `sameAs`
+// when present so we never publish an empty/guessed social link.
 import './globals.css';
 
 // Editorial serif display (Latin) + clean grotesk body
@@ -118,7 +120,7 @@ function structuredData() {
       latitude: VENUE_COORDS.lat,
       longitude: VENUE_COORDS.lng,
     },
-    sameAs: [INSTAGRAM_URL],
+    ...(INSTAGRAM_URL ? { sameAs: [INSTAGRAM_URL] } : {}),
   };
 
   // Jeddah is UTC+3 (no DST); emit a full datetime for Google Event eligibility.
@@ -130,7 +132,7 @@ function structuredData() {
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     image: `${SITE_URL}/images/hero.jpg`,
-    url: SITE_URL,
+    url: `${SITE_URL}/events/${e.id}/`,
     performer: { '@type': 'PerformingGroup', name: e.artist },
     location: {
       '@type': 'MusicVenue',

@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useLang } from './LanguageProvider';
-import { INSTAGRAM_URL } from '@/lib/config';
+import { INSTAGRAM_KNOWN, INSTAGRAM_URL } from '@/lib/config';
 
 export function Hero() {
   const { t } = useLang();
@@ -33,15 +33,31 @@ export function Hero() {
                   →
                 </span>
               </a>
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-ink/30 px-6 py-3 text-ink transition-colors hover:border-ink"
-              >
-                <InstagramGlyph />
-                <span className="font-display text-base">{t.hero.instagram}</span>
-              </a>
+              {INSTAGRAM_KNOWN && INSTAGRAM_URL ? (
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border border-ink/30 px-6 py-3 text-ink transition-colors hover:border-ink"
+                >
+                  <InstagramGlyph />
+                  <span className="font-display text-base">
+                    {t.hero.instagram}
+                  </span>
+                </a>
+              ) : (
+                // No verified IG handle yet — non-linking placeholder, not a guess.
+                <span
+                  role="note"
+                  aria-disabled="true"
+                  className="inline-flex cursor-default select-none items-center gap-2 border border-ink/20 px-6 py-3 text-ink-soft"
+                >
+                  <InstagramGlyph />
+                  <span className="font-display text-base">
+                    {t.links.igPlaceholder}
+                  </span>
+                </span>
+              )}
             </div>
           </div>
 

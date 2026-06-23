@@ -22,8 +22,27 @@ export type Dict = {
     title: string;
     subtitle: string;
     ticketsCta: string;
+    detailsCta: string;
     tba: string;
     note: string;
+  };
+  event: {
+    backToEvents: string;
+    dateLabel: string;
+    timeLabel: string;
+    genreLabel: string;
+    venueLabel: string;
+    locationLabel: string;
+    aboutLabel: string;
+    liveBadge: string;
+    lineupNote: string;
+    ticketsCta: string;
+    ticketsPlaceholder: string;
+    mapCta: string;
+    doorsNote: string;
+  };
+  links: {
+    igPlaceholder: string;
   };
   visit: {
     eyebrow: string;
@@ -81,8 +100,27 @@ export const dict: Record<Lang, Dict> = {
       title: 'Events & Lineup',
       subtitle: 'World-class techno and house, on the edge of the Red Sea.',
       ticketsCta: 'Tickets & info',
+      detailsCta: 'Event details',
       tba: 'More to be announced',
-      note: 'Lineup and dates are subject to change. Follow our Instagram for the latest announcements and ticketing.',
+      note: 'Lineup and dates are subject to change. Ticketing and full announcements are published per event.',
+    },
+    event: {
+      backToEvents: 'Back to events',
+      dateLabel: 'Date',
+      timeLabel: 'Time',
+      genreLabel: 'Sound',
+      venueLabel: 'Venue',
+      locationLabel: 'Location',
+      aboutLabel: 'About the artist',
+      liveBadge: 'Live',
+      lineupNote: 'Lineup subject to change.',
+      ticketsCta: 'Tickets',
+      ticketsPlaceholder: 'Tickets — coming soon',
+      mapCta: 'Open in Maps',
+      doorsNote: 'Doors and set times are confirmed per event.',
+    },
+    links: {
+      igPlaceholder: 'Instagram — coming soon',
     },
     visit: {
       eyebrow: 'Plan your night',
@@ -145,8 +183,27 @@ export const dict: Record<Lang, Dict> = {
       title: 'الفعاليات والعروض',
       subtitle: 'تكنو وهاوس على أعلى مستوى، على حافة البحر الأحمر.',
       ticketsCta: 'التذاكر والمعلومات',
+      detailsCta: 'تفاصيل الفعالية',
       tba: 'سيُعلن عن المزيد',
-      note: 'العروض والتواريخ قابلة للتغيير. تابع حسابنا على إنستغرام لآخر الإعلانات والتذاكر.',
+      note: 'العروض والتواريخ قابلة للتغيير. تُنشَر التذاكر والإعلانات الكاملة لكل فعالية على حدة.',
+    },
+    event: {
+      backToEvents: 'العودة إلى الفعاليات',
+      dateLabel: 'التاريخ',
+      timeLabel: 'الوقت',
+      genreLabel: 'الأسلوب',
+      venueLabel: 'المكان',
+      locationLabel: 'الموقع',
+      aboutLabel: 'عن الفنان',
+      liveBadge: 'حيّ',
+      lineupNote: 'العروض قابلة للتغيير.',
+      ticketsCta: 'التذاكر',
+      ticketsPlaceholder: 'التذاكر — قريبًا',
+      mapCta: 'افتح في الخرائط',
+      doorsNote: 'تُؤكَّد مواعيد الأبواب والعروض لكل فعالية.',
+    },
+    links: {
+      igPlaceholder: 'إنستغرام — قريبًا',
     },
     visit: {
       eyebrow: 'خطّط لليلتك',

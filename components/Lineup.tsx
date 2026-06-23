@@ -2,7 +2,7 @@
 
 import { useLang } from './LanguageProvider';
 import { formatEventDate } from '@/lib/i18n';
-import { EVENTS, INSTAGRAM_URL } from '@/lib/config';
+import { EVENTS } from '@/lib/config';
 import { Plate } from './Plate';
 
 export function Lineup() {
@@ -41,18 +41,25 @@ export function Lineup() {
                       {formatEventDate(ev.dateISO, lang)}
                     </p>
                     <h3 className="mt-1.5 font-display text-2xl font-semibold leading-tight text-ink sm:text-3xl">
-                      {ev.tba ? t.lineup.tba : ev.artist}
+                      {ev.tba ? (
+                        t.lineup.tba
+                      ) : (
+                        <a
+                          href={`/events/${ev.id}/`}
+                          className="transition-colors hover:text-terracotta"
+                        >
+                          {ev.artist}
+                        </a>
+                      )}
                     </h3>
                   </div>
 
                   {!ev.tba && (
                     <a
-                      href={INSTAGRAM_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={`/events/${ev.id}/`}
                       className="col-span-2 mt-4 inline-flex min-h-[44px] w-fit items-center gap-2 border-b border-ink/40 pb-0.5 font-display text-base text-ink transition-colors hover:border-terracotta hover:text-terracotta sm:col-span-1 sm:col-start-3 sm:mt-0"
                     >
-                      {t.lineup.ticketsCta}
+                      {t.lineup.detailsCta}
                       <span aria-hidden="true" className="rtl:rotate-180">
                         →
                       </span>

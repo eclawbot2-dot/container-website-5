@@ -9,4 +9,14 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://container5.jahdev.com/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://container5.jahdev.com/" />
   </url>
+  <url>
+    <loc>https://container5.jahdev.com/events/anja-schneider/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://container5.jahdev.com/events/cassy/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

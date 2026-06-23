@@ -22,6 +22,7 @@ export type Dict = {
     title: string;
     subtitle: string;
     ticketsCta: string;
+    ticketsPlaceholder: string;
     detailsCta: string;
     tba: string;
     note: string;
@@ -100,6 +101,7 @@ export const dict: Record<Lang, Dict> = {
       title: 'Events & Lineup',
       subtitle: 'World-class techno and house, on the edge of the Red Sea.',
       ticketsCta: 'Buy tickets',
+      ticketsPlaceholder: 'Tickets — coming soon',
       detailsCta: 'Event details',
       tba: 'More to be announced',
       note: 'Lineup and dates are subject to change. Ticketing and full announcements are published per event.',
@@ -183,6 +185,7 @@ export const dict: Record<Lang, Dict> = {
       title: 'الفعاليات والعروض',
       subtitle: 'تكنو وهاوس على أعلى مستوى، على حافة البحر الأحمر.',
       ticketsCta: 'اشترِ التذاكر',
+      ticketsPlaceholder: 'التذاكر — قريبًا',
       detailsCta: 'تفاصيل الفعالية',
       tba: 'سيُعلن عن المزيد',
       note: 'العروض والتواريخ قابلة للتغيير. تُنشَر التذاكر والإعلانات الكاملة لكل فعالية على حدة.',

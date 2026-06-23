@@ -16,9 +16,9 @@ export const INSTAGRAM_URL = INSTAGRAM_KNOWN && INSTAGRAM_HANDLE
   ? `https://instagram.com/${INSTAGRAM_HANDLE}`
   : '';
 
-// Webook Jeddah events — swap to specific event slug when on sale
-export const TICKETS_URL = 'https://webook.com/explore?city=JED&country=SA';
-export const TICKETS_KNOWN = true;
+// TODO: no ticket URL yet — placeholder until on sale
+export const TICKETS_URL = '';
+export const TICKETS_KNOWN = false;
 
 // TODO real mailbox unknown — info@container.jahdev.com has no mailbox
 // provisioned, so a mailto: would bounce. Shown as a plain (non-mailto) label

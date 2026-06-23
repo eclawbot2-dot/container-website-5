@@ -4,6 +4,7 @@ import { useLang } from './LanguageProvider';
 import { formatEventDate } from '@/lib/i18n';
 import { EVENTS, TICKETS_KNOWN, TICKETS_URL } from '@/lib/config';
 import { Plate } from './Plate';
+import { PlaceholderCta } from './PlaceholderCta';
 
 export function Lineup() {
   const { t, lang } = useLang();
@@ -19,7 +20,7 @@ export function Lineup() {
             <p className="mt-3 max-w-2xl font-display text-lg italic text-ink-soft">
               {t.lineup.subtitle}
             </p>
-            {TICKETS_KNOWN && TICKETS_URL && (
+            {TICKETS_KNOWN && TICKETS_URL ? (
               <a
                 href={TICKETS_URL}
                 target="_blank"
@@ -33,6 +34,12 @@ export function Lineup() {
                   →
                 </span>
               </a>
+            ) : (
+              <PlaceholderCta
+                label={t.lineup.ticketsPlaceholder}
+                variant="solid"
+                className="mt-6"
+              />
             )}
           </div>
         </div>

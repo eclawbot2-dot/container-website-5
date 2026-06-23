@@ -15,6 +15,23 @@ html {
 body {
   background-color: theme('colors.paper');
   color: theme('colors.ink');
+  /* Guard against any horizontal overflow on small screens. */
+  overflow-x: hidden;
+}
+
+/* Accessible keyboard focus ring across all interactive elements. */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid theme('colors.terracotta');
+  outline-offset: 2px;
+  border-radius: 1px;
+}
+
+/* Ensure embedded media never forces horizontal scroll. */
+img,
+iframe {
+  max-width: 100%;
 }
 
 /* Language-driven font families.

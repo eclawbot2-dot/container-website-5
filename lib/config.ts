@@ -6,13 +6,21 @@ export const CONTACT_EMAIL = 'info@container.jahdev.com';
 
 export const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
 
+// Canonical production origin (used for metadata, canonical, OG, sitemap, JSON-LD)
+export const SITE_URL = 'https://container5.jahdev.com';
+export const VENUE_NAME = 'The Container';
+
 // Venue geo (Al Moulysaa district, Jeddah port, Red Sea coast)
 export const VENUE_COORDS = { lat: 21.2727, lng: 39.1935 };
 
-// Open the location in Google Maps
+// Open the location in Google Maps ("Open in Maps" link)
 export const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${VENUE_COORDS.lat},${VENUE_COORDS.lng}`;
-// Static map (OpenStreetMap-based, no API key needed)
-export const STATIC_MAP_URL = `https://staticmap.openstreetmap.de/staticmap.php?center=${VENUE_COORDS.lat},${VENUE_COORDS.lng}&zoom=13&size=900x500&maptype=mapnik&markers=${VENUE_COORDS.lat},${VENUE_COORDS.lng},red-pushpin`;
+
+// No-API-key Google Maps embed iframe (reliable, renders live). hl=<active lang>
+// is appended at render time so the map UI matches the visitor's language.
+export function mapEmbedUrl(lang: 'en' | 'ar' = 'en'): string {
+  return `https://www.google.com/maps?q=${VENUE_COORDS.lat},${VENUE_COORDS.lng}&z=15&output=embed&hl=${lang}`;
+}
 
 export type EventItem = {
   id: string;

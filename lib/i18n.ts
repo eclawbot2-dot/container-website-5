@@ -35,6 +35,7 @@ export type Dict = {
     hoursTitle: string;
     hours: string;
     mapCta: string;
+    mapTitle: string;
     entryTitle: string;
     entry: string;
   };
@@ -96,6 +97,7 @@ export const dict: Record<Lang, Dict> = {
       hours:
         'Doors and set times are published per event. Sets typically run from late afternoon through the night.',
       mapCta: 'Open in Maps',
+      mapTitle: 'Map showing The Container at Shams Container Terminal, Jeddah port, Saudi Arabia',
       entryTitle: 'Entry',
       entry:
         'The Container hosts licensed live electronic-music events. Entry is for ticket-holders; please bring valid ID. Event-specific entry details are confirmed at announcement.',
@@ -159,6 +161,7 @@ export const dict: Record<Lang, Dict> = {
       hours:
         'تُنشَر مواعيد الأبواب والعروض لكل فعالية. عادةً ما تمتد العروض من بعد الظهر حتى الليل.',
       mapCta: 'افتح في الخرائط',
+      mapTitle: 'خريطة تُظهر موقع ذا كونتينر في محطة شمس للحاويات، ميناء جدة، المملكة العربية السعودية',
       entryTitle: 'الدخول',
       entry:
         'يستضيف ذا كونتينر فعاليات موسيقى إلكترونية حيّة مرخّصة. الدخول لحاملي التذاكر؛ يُرجى إحضار هوية سارية. تُؤكَّد تفاصيل الدخول الخاصة بكل فعالية عند الإعلان عنها.',

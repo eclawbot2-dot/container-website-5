@@ -50,7 +50,7 @@ export function Lineup() {
                       href={INSTAGRAM_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="col-span-2 mt-4 inline-flex w-fit items-center gap-2 border-b border-ink/40 pb-0.5 font-display text-base text-ink transition-colors hover:border-terracotta hover:text-terracotta sm:col-span-1 sm:col-start-3 sm:mt-0"
+                      className="col-span-2 mt-4 inline-flex min-h-[44px] w-fit items-center gap-2 border-b border-ink/40 pb-0.5 font-display text-base text-ink transition-colors hover:border-terracotta hover:text-terracotta sm:col-span-1 sm:col-start-3 sm:mt-0"
                     >
                       {t.lineup.ticketsCta}
                       <span aria-hidden="true" className="rtl:rotate-180">

@@ -1,11 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import { useLang } from './LanguageProvider';
-import { MAPS_URL, STATIC_MAP_URL } from '@/lib/config';
+import { MAPS_URL, mapEmbedUrl } from '@/lib/config';
 
 export function Visit() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const blocks = [
     { title: t.visit.addressTitle, body: t.visit.address },
     { title: t.visit.gettingThereTitle, body: t.visit.gettingThere },
@@ -48,24 +47,20 @@ export function Visit() {
             </div>
           </dl>
 
-          {/* Map plate */}
+          {/* Map plate — live Google Maps embed (no API key), framed editorial-style */}
           <figure className="plate lg:col-span-6">
-            <a
-              href={MAPS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden bg-bone">
-                <Image
-                  src={STATIC_MAP_URL}
-                  alt="Map of The Container at Shams Container Terminal, Jeddah"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  unoptimized
-                />
-              </div>
-            </a>
+            <div className="relative aspect-[16/10] overflow-hidden bg-bone">
+              <iframe
+                key={lang}
+                src={mapEmbedUrl(lang)}
+                title={t.visit.mapTitle}
+                aria-label={t.visit.mapTitle}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 h-full w-full border-0"
+                style={{ filter: 'grayscale(0.15) contrast(1.02) sepia(0.04)' }}
+              />
+            </div>
             <figcaption className="flex items-baseline justify-between gap-3">
               <span>Al Moulysaa · Jeddah Port</span>
               <span className="font-display italic text-terracotta">

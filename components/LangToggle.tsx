@@ -10,7 +10,7 @@ export function LangToggle({ className = '' }: { className?: string }) {
       onClick={toggle}
       aria-label={t.langToggle.switchTo}
       title={t.langToggle.switchTo}
-      className={`group inline-flex items-center gap-2 border border-ink/30 px-3.5 py-1.5 text-ink transition-colors hover:border-ink hover:bg-ink hover:text-paper ${className}`}
+      className={`group inline-flex min-h-[44px] items-center gap-2 border border-ink/30 px-3.5 py-1.5 text-ink transition-colors hover:border-ink hover:bg-ink hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta ${className}`}
     >
       <span className="label leading-none" aria-hidden="true">
         {lang === 'en' ? 'EN' : 'ع'}

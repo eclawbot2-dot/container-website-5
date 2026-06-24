@@ -69,9 +69,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/images/hero.jpg',
-        width: 900,
-        height: 1200,
-        alt: 'Crowd under confetti and stage lights at The Container festival, Jeddah',
+        width: 1600,
+        height: 2400,
+        alt: 'Crowd dancing under stage lights inside a raw concrete-and-steel warehouse at The Container, Jeddah',
       },
     ],
   },

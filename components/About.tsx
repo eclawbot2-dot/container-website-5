@@ -21,7 +21,7 @@ export function About() {
           <div className="lg:col-span-5">
             <Plate
               src="/images/containers.jpg"
-              alt="Towering stacks of steel shipping containers"
+              alt="Crowd dancing under red laser light inside a steel warehouse venue"
               caption={t.lineup.eyebrow + ' · Steel'}
               index="02"
               ratio="aspect-[4/5]"
@@ -53,8 +53,8 @@ export function About() {
         <div className="mt-12 grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2">
           <Plate
             src="/images/port.jpg"
-            alt="Working Red Sea container port at the waterfront"
-            caption="Red Sea · Port"
+            alt="Crowd under stage lights before a steel scaffold stage at an open-air industrial-yard show"
+            caption="Open-Air · Stage"
             index="03"
             ratio="aspect-[16/10]"
           />
